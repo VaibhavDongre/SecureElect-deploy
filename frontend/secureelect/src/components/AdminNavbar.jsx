@@ -8,21 +8,30 @@ export default function AdminNavbar() {
         navigate("/");
     };
 
-    return(
-        <nav className="navbar navbar-dark bg-dark px-4">
-            <Link to="/admin/dashboard" className="navbar-brand">
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+            <Link className="navbar-brand fw-bold" to="/admin/dashboard">
                 SecureElect Admin
             </Link>
-    
-            <div>
-                <Link to="/admin/dashboard" className="btn btn-outline-light me-2">
-                    Elections
-                </Link>
-            </div>
 
-            <button className="btn btn-danger" onClick={logout}>
-                Logout
-            </button>
+            <div className="collapse navbar-collapse">
+                <ul className="navbar-nav ms-auto">
+                    <li className="nav-item">
+                        <Link to="/admin/dashboard" className="nav-link">
+                            Elections
+                        </Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <button
+                            className="btn btn-danger ms-3"
+                            onClick={logout}
+                        >
+                            Logout
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </nav>
-    )
+    );
 }
