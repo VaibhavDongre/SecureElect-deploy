@@ -9,28 +9,22 @@ export default function AdminNavbar() {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-            <Link className="navbar-brand fw-bold" to="/admin/dashboard">
+        <nav className="navbar navbar-dark bg-dark px-4 d-flex justify-content-between align-items-center">
+
+            <Link to="/admin/dashboard" className="navbar-brand fw-bold">
                 SecureElect Admin
             </Link>
 
-            <div className="collapse navbar-collapse">
-                <ul className="navbar-nav ms-auto">
-                    <li className="nav-item">
-                        <Link to="/admin/dashboard" className="nav-link">
-                            Elections
-                        </Link>
-                    </li>
+            <div className="d-flex align-items-center">
 
-                    <li className="nav-item">
-                        <button
-                            className="btn btn-danger ms-3"
-                            onClick={logout}
-                        >
-                            Logout
-                        </button>
-                    </li>
-                </ul>
+                <Link to="/admin/dashboard" className="btn btn-outline-light me-3">
+                    Elections
+                </Link>
+
+                <button className="btn btn-danger" onClick={logout}>
+                    Logout
+                </button>
+
             </div>
         </nav>
     );
