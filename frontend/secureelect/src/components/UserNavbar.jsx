@@ -1,28 +1,37 @@
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function UserNavbar() {
     const navigate = useNavigate();
 
     const logout = () => {
         localStorage.clear();
-        navigate("/");
+        navigate("/login");
     };
 
-    return(
-        <nav className="navbar navbar-dark bg-dark px-4">
-            <Link to="/admin/dashboard" className="navbar-brand">
-                SecureElect Admin
-            </Link>
-    
-            <div>
-                <Link to="/admin/dashboard" className="btn btn-outline-light me-2">
-                    Elections
-                </Link>
-            </div>
+    return (
+        <nav className="navbar navbar-dark bg-primary px-4 d-flex justify-content-between align-items-center">
 
-            <button className="btn btn-danger" onClick={logout}>
-                Logout
-            </button>
+            {/* LEFT SIDE */}
+            <Link to="/user/home" className="navbar-brand fw-bold">
+                SecureElect User
+            </Link>
+
+            {/* RIGHT SIDE BUTTONS */}
+            <div className="d-flex align-items-center">
+
+                <Link to="/user/home" className="btn btn-outline-light me-3">
+                    Home
+                </Link>
+
+                <Link to="/user/vote" className="btn btn-outline-light me-3">
+                    Vote
+                </Link>
+
+                <button className="btn btn-light" onClick={logout}>
+                    Logout
+                </button>
+
+            </div>
         </nav>
-    )
+    );
 }
