@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import API from "../services/api";
 import { useState } from "react";
@@ -23,13 +23,12 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        //Basic validation
         if (!form.name || !form.email || !form.password || !form.confirmPassword) {
             toast.error("All fields are required");
             return;
         }
 
-        if(form.password !== form.confirmPassword) {
+        if (form.password !== form.confirmPassword) {
             toast.error("Passwords do not match");
             return;
         }
@@ -40,38 +39,40 @@ export default function Register() {
                 email: form.email,
                 password: form.password
             });
-            console.log(res);
 
-            toast.success("Registeration successfull! Please login.");
+            toast.success("Registration successful! Please login.");
             navigate("/login");
         } catch (error) {
             console.log(error);
-            toast.error("Registeration failed. Try again.");
+            toast.error("Registration failed. Try again.");
         }
-    }
+    };
+
     return (
-        <div className="container mt-5" style={{maxWidth: "450px"}}>
-            
-            <div className="card shadow-sm p-4">
+        <div className="container mt-5" style={{ maxWidth: "450px" }}>
+            <form className="card shadow-sm p-4" onSubmit={handleSubmit}>
                 <h3 className="fw-bold text-center mb-4">Create Account</h3>
+
                 <div className="mb-3">
                     <label className="form-label">Full Name</label>
                     <input 
                         type="text"
                         name="name"
                         value={form.name}
-                        onChange={handleChange} 
-                        className="form-control" />
+                        onChange={handleChange}
+                        className="form-control"
+                    />
                 </div>
 
                 <div className="mb-3">
                     <label className="form-label">Email Address</label>
                     <input 
-                        type="email" 
+                        type="email"
                         name="email"
                         value={form.email}
                         onChange={handleChange}
-                        className="form-control" />
+                        className="form-control"
+                    />
                 </div>
 
                 <div className="mb-3">
@@ -79,9 +80,10 @@ export default function Register() {
                     <input 
                         type="password"
                         name="password"
-                        value={form.password} 
+                        value={form.password}
                         onChange={handleChange}
-                        className="form-control"/>
+                        className="form-control"
+                    />
                 </div>
 
                 <div className="mb-3">
@@ -89,20 +91,21 @@ export default function Register() {
                     <input 
                         type="password"
                         name="confirmPassword"
-                        value={form.confirmPassword} 
+                        value={form.confirmPassword}
                         onChange={handleChange}
-                        className="form-control"/>
+                        className="form-control"
+                    />
                 </div>
 
-                <button className="btn btn-primary w-100"
-                    onClick={handleSubmit}
-                >Register</button>
+                <button type="submit" className="btn btn-primary w-100">
+                    Register
+                </button>
 
                 <p className="text-center mt-3">
                     Already have an account?{" "}
                     <a href="/login" className="text-decoration-none">Login</a>
                 </p>
-            </div>
+            </form>
         </div>
-    )
+    );
 }
