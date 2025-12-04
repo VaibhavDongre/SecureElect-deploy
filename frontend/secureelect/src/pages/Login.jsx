@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <div className="container d-flex justify-content-center align-items-center" style={{height: "100vh"}}>
       <div className="card p-4 shadow" style={{width: "380px"}}>
-        <h3 className="text-center mb-3">SecureElect Login</h3>
+        <h3 className="fw-bold text-center mb-3">Login</h3>
 
         <form onSubmit={handleSubmit}>
             <div className='mb-3'>
