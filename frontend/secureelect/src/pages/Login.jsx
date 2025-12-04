@@ -74,6 +74,17 @@ const Login = () => {
             </div>
 
             <button className='btn btn-primary w-100'>Login</button>
+
+            <div className='text-center mt-3'>
+              <p className='mb-0'>
+                Dont't have an account?{" "}
+                <span
+                  style={{cursor: 'pointer'}}>
+                  <a href="/register" className="text-decoration-none">Sign Up</a>
+                </span>
+              </p>
+            </div>
+          
         </form>
       </div>
     </div>
