@@ -51,9 +51,9 @@ export default function Register() {
     }
     return (
         <div className="container mt-5" style={{maxWidth: "450px"}}>
-            <h2 className="fw-bold text-center mb-4">Create Account</h2>
-
+            
             <div className="card shadow-sm p-4">
+                <h3 className="fw-bold text-center mb-4">Create Account</h3>
                 <div className="mb-3">
                     <label className="form-label">Full Name</label>
                     <input 
