@@ -42,6 +42,12 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Alert variant="warning" className="text-center">
+      ⚠️ This project uses a <b>free-tier backend</b>.  
+      The server may take <b>30–60 seconds</b> to start on first use.
+      Please wait patiently after clicking Login.
+    </Alert>
     <div className="container d-flex justify-content-center align-items-center" style={{height: "100vh"}}>
       <div className="card p-4 shadow" style={{width: "380px"}}>
         <h3 className="fw-bold text-center mb-3">Login</h3>
@@ -88,6 +94,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    </>
   )
 }
 
