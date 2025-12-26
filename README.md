@@ -56,8 +56,8 @@ Make sure you have the following installed **before running the project**:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/SecureElect.git
-cd SecureElect/backend
+git clone https://github.com/VaibhavDongre/SecureElect-deploy.git
+cd SecureElect-deploy/backend
 ```
 
 ### 2. Create MySQL Database
@@ -76,7 +76,11 @@ spring.datasource.password=your_mysql_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
-jwt.secret=create_a_very_long_secret_key_or_else_it_won't_work
+app.default.admin.email=admin@gmail.com
+app.default.admin.password=admin123
+app.default.admin.name=Super Admin
+
+jwt.secret=createaverylongsecretkeyorelseitwontworkVaibhavDongre
 jwt.expiration=86400000
 ```
 - Everything is important, if missing, backend will fail to start
@@ -113,14 +117,24 @@ npm install
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: http://localhost:8080,
+  baseURL: "http://localhost:8080",
 });
 
 export default API;
 ```
-
+- Open ```frontend/secureelect/package.json``` and confirm
+```bash
+"dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "bootstrap": "^5.3.8",
+    "react-bootstrap": "^2.10.10"
+}
+```
 ### 4. Run Frontend
 ```bash
+npm install react react-dom
+npm install react-bootstrap bootstrap
 npm run dev
 ```
 - Frontend runs at:
